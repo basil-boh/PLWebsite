@@ -24,35 +24,35 @@ public class PlayerService {
     public List<Player> getPlayersFromTeam(String teamName) {
         return playerRepository.findAll()
             .stream()
-            .filter(p -> p.getTeam().equals(teamName))
+            .filter(p -> p.getTeam_name() != null && p.getTeam_name().equals(teamName))
             .collect(Collectors.toList());
     }
 
     public List<Player> getPlayersByName(String searchText) {
         return playerRepository.findAll()
             .stream()
-            .filter(p -> p.getName().toLowerCase().contains(searchText.toLowerCase()))
+            .filter(p -> p.getName() != null && p.getName().toLowerCase().contains(searchText.toLowerCase()))
             .collect(Collectors.toList());
     }
 
-    public List<Player> getPlayersByPos(String searchText) {
+    public List<Player> getPlayersByPosition(String searchText) {
         return playerRepository.findAll()
             .stream()
-            .filter(p -> p.getPos().toLowerCase().contains(searchText.toLowerCase()))
+            .filter(p -> p.getPosition() != null && p.getPosition().toLowerCase().contains(searchText.toLowerCase()))
             .collect(Collectors.toList());
     }
 
     public List<Player> getPlayersByNation(String searchText) {
         return playerRepository.findAll()
             .stream()
-            .filter(p -> p.getNation().toLowerCase().contains(searchText.toLowerCase()))
+            .filter(p -> p.getNation() != null && p.getNation().toLowerCase().contains(searchText.toLowerCase()))
             .collect(Collectors.toList());
     }
 
     public List<Player> getPlayersByTeamAndPosition(String team, String position) {
         return playerRepository.findAll()
             .stream()
-            .filter(p -> team.equals(p.getTeam()) && position.equals(p.getPos()))
+            .filter(p -> team.equals(p.getTeam_name()) && position.equals(p.getPosition()))
             .collect(Collectors.toList());
     }
 
@@ -67,8 +67,8 @@ public class PlayerService {
             Player playerToUpdate = existingPlayer.get();
             playerToUpdate.setName(player.getName());
             playerToUpdate.setNation(player.getNation());
-            playerToUpdate.setPos(player.getPos());
-            playerToUpdate.setTeam(player.getTeam());
+            playerToUpdate.setPosition(player.getPosition());
+            playerToUpdate.setTeam_name(player.getTeam_name());
 
             playerRepository.save(playerToUpdate);
             return playerToUpdate;

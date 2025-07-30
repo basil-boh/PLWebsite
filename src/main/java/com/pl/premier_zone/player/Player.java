@@ -14,65 +14,65 @@ public class Player {
     // Primary key is name -> Disclaimer this specific case works because
     // there are no duplicate names in csv file
     @Id
-    @Column(name = "name", unique = true) // Tells SpringBoot where to find in postgres DB
+    @Column(name = "player_name", unique = true) // Tells SpringBoot where to find in postgres DB
     private String name;
 
     private String nation;
 
-    private String pos;
+    private String position;
 
     private Integer age;
 
     // Matches Played
-    private Integer mp;
+    private Integer matches_played;
 
     // Number of matches the player was in the starting lineup
     private Integer starts;
 
     // Total minutes played
-    private Double min;
+    private Double minutes_played;
 
-    private Double gls;
+    private Double goals;
 
-    private Double asts;
+    private Double assists;
 
-    private Double pk;
+    private Double penalties_scored;
 
     // Total yellow cards
-    private Double crdy;
+    private Double yellow_cards;
 
     // Total red cards
-    private Double crdr;
+    private Double red_cards;
 
     // Expected Goals
-    private Double xg;
+    private Double expected_goals;
 
     // Expected Assists
-    private Double xag;
+    private Double expected_assists;
 
-    private String team;
+    private String team_name;
 
     // Default Constructor
     public Player() {
     }
 
     // Parameterized Constructor
-    public Player(String name, String nation, String pos, Integer age, Integer mp, Integer starts, Double min, Double gls, Double asts, Double pk, Double crdy, Double crdr, Double xg, Double xag, String team) {
+    public Player(String name, String nation, String position, Integer age, Integer matches_played, Integer starts, Double minutes_played, Double goals, Double assists, Double penalties_scored, Double yellow_cards, Double red_cards, Double expected_goals, Double expected_assists, String team_name) {
         this.name = name;
         this.nation = nation;
-        this.pos = pos;
+        this.position = position;
         this.age = age;
-        this.mp = mp;
+        this.matches_played = matches_played;
         this.starts = starts;
-        this.min = min;
-        this.gls = gls;
-        this.asts = asts;
-        this.pk = pk;
-        this.crdy = crdy;
-        this.crdr = crdr;
-        this.xg = xg;
-        this.xag = xag;
-        this.team = team;
+        this.minutes_played = minutes_played;
+        this.goals = goals;
+        this.assists = assists;
+        this.penalties_scored = penalties_scored;
+        this.yellow_cards = yellow_cards;
+        this.red_cards = red_cards;
+        this.expected_goals = expected_goals;
+        this.expected_assists = expected_assists;
+        this.team_name = team_name;
     }
 
     // Getters
@@ -84,56 +84,56 @@ public class Player {
         return nation;
     }
 
-    public String getPos() {
-        return pos;
+    public String getPosition() {
+        return position;
     }
 
     public Integer getAge() {
         return age;
     }
 
-    public Integer getMp() {
-        return mp;
+    public Integer getMatches_played() {
+        return matches_played;
     }
 
     public Integer getStarts() {
         return starts;
     }
 
-    public Double getMin() {
-        return min;
+    public Double getMinutes_played() {
+        return minutes_played;
     }
 
-    public Double getGls() {
-        return gls;
+    public Double getGoals() {
+        return goals;
     }
 
-    public Double getAsts() {
-        return asts;
+    public Double getAssists() {
+        return assists;
     }
 
-    public Double getPk() {
-        return pk;
+    public Double getPenalties_scored() {
+        return penalties_scored;
     }
 
-    public Double getCrdy() {
-        return crdy;
+    public Double getYellow_cards() {
+        return yellow_cards;
     }
 
-    public Double getCrdr() {
-        return crdr;
+    public Double getRed_cards() {
+        return red_cards;
     }
 
-    public Double getXg() {
-        return xg;
+    public Double getExpected_goals() {
+        return expected_goals;
     }
 
-    public Double getXag() {
-        return xag;
+    public Double getExpected_assists() {
+        return expected_assists;
     }
 
-    public String getTeam() {
-        return team;
+    public String getTeam_name() {
+        return team_name;
     }
 
     // Setters
@@ -145,55 +145,55 @@ public class Player {
         this.nation = nation;
     }
 
-    public void setPos(String pos) {
-        this.pos = pos;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public void setAge(Integer age) {
         this.age = age;
     }
 
-    public void setMp(Integer mp) {
-        this.mp = mp;
+    public void setMatches_played(Integer mp) {
+        this.matches_played = mp;
     }
 
     public void setStarts(Integer starts) {
         this.starts = starts;
     }
 
-    public void setMin(Double min) {
-        this.min = min;
+    public void setMinutes_played(Double min) {
+        this.minutes_played = min;
     }
 
-    public void setGls(Double gls) {
-        this.gls = gls;
+    public void setGoals(Double goals) {
+        this.goals = goals;
     }
 
-    public void setAsts(Double asts) {
-        this.asts = asts;
+    public void setAssists(Double asts) {
+        this.assists = asts;
     }
 
-    public void setPk(Double pk) {
-        this.pk = pk;
+    public void setPenalties_scored(Double pk) {
+        this.penalties_scored = pk;
     }
 
-    public void setCrdy(Double crdy) {
-        this.crdy = crdy;
+    public void setYellow_cards(Double yellow_cards) {
+        this.yellow_cards = yellow_cards;
     }
 
-    public void setCrdr(Double crdr) {
-        this.crdr = crdr;
+    public void setRed_cards(Double red_cards) {
+        this.red_cards = red_cards;
     }
 
-    public void setXg(Double xg) {
-        this.xg = xg;
+    public void setExpected_goals(Double expected_goals) {
+        this.expected_goals = expected_goals;
     }
 
-    public void setXag(Double xag) {
-        this.xag = xag;
+    public void setExpected_assists(Double expected_assists) {
+        this.expected_assists = expected_assists;
     }
 
-    public void setTeam(String team) {
-        this.team = team;
+    public void setTeam_name(String team_name) {
+        this.team_name = team_name;
     }
 }
